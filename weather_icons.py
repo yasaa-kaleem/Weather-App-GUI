@@ -1,14 +1,16 @@
 def get_icon_per_weather_condition(weather_condition):
-    print(weather_condition)
-    if "light rain" in weather_condition.lower():
-        return 'images/rain.svg'
-    elif 'thunderstorm' in weather_condition.lower():
-        return 'images/thunderstorms.svg'
-    elif 'thunderstorm with' in weather_condition.lower():
-        return 'images/thunderstorms-rain.svg'
-    elif 'overcast' in weather_condition.lower():
-        return 'images/overcast.svg'
-    elif 'few clouds' or 'scattered clouds' or 'broken clouds' in weather_condition.lower():
-        return 'images/cloudy.svg'
-    elif 'clear' in weather_condition.lower():
-        return 'images/clear-day.svg'
+    str_condition = str(weather_condition).lower()
+    result = ''
+    if "light rain" in str_condition:
+        result = 'images/rain.png'
+    elif 'thunderstorm' in str_condition:
+        result = 'images/thunderstorms.png'
+    elif 'thunderstorm with' in str_condition:
+        result = 'images/thunderstorms-rain.png'
+    elif 'overcast' in str_condition:
+        result = 'images/overcast.png'
+    elif 'few clouds' in str_condition or 'scattered clouds' in str_condition or 'broken clouds' in str_condition:
+        result = 'images/cloudy.png'
+    elif 'clear' in str_condition:
+        result = 'images/clear-day.png'
+    return result

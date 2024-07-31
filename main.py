@@ -1,18 +1,18 @@
-import svglib.utils
 from get_location_api import get_location_response
 from weather_api import get_weather_response
 from multi_day_weather_api import get_multi_day_weather_response
-from io import BytesIO
 import customtkinter as ctk
-import requests
-from PIL import Image, ImageTk
-import tksvg
+from PIL import Image
 import pywinstyles
 from datetime import datetime
 import calendar
 from weather_icons import get_icon_per_weather_condition
 
-bg_image = 'images/clear-day.svg'
+import weather_gui
+
+bg_image = ctk.CTkImage(light_image=Image.open('images/clear-day.png'),
+	dark_image=Image.open('images/clear-day.png'),
+	size=(1024,1024))
 
 def get_lat_lon_from_zip(zip):
     location_dict = get_location_response(zip)
@@ -25,7 +25,7 @@ def get_response_using_lat_lon(location_dict, in_fahrenheit):
         lat_lon_response = get_weather_response(lat, lon,"imperial")
     else:
         lat_lon_response = get_weather_response(lat, lon,"metric")
-    print(lat_lon_response)
+        
     return lat_lon_response
 
 def get_multi_day_response(location_dict, in_fahrenheit):
@@ -36,7 +36,6 @@ def get_multi_day_response(location_dict, in_fahrenheit):
     else:
         lat_lon_response = get_multi_day_weather_response(lat, lon, "24", "metric")
 
-    print(lat_lon_response)
     return lat_lon_response
 
 
@@ -67,10 +66,17 @@ def update_weather():
                 desc_label1.configure(text=f"{desc_data}")
                 
                 #Fetch and display weather icon
-                svg_image = tksvg.SvgImage(file=bg_image, scale=2)        
-                icon_label1.configure(image=svg_image)
+                weather_icon = get_icon_per_weather_condition(desc_data)
+                ctk_image = ctk.CTkImage(light_image=Image.open(weather_icon),
+                                         dark_image=Image.open(weather_icon),
+                                         size=(100,100))        
+                icon_label1.configure(image=ctk_image)
 
-                icon_label2.configure(image='')  
+                try:
+                    icon_label2.configure(image='')
+                except:
+                    pass
+                 
                 temp_label2.configure(text="")
                 desc_label2.configure(text="")
                 date_label2.configure(text="")
@@ -128,10 +134,22 @@ def update_weather():
                 
                 
                 #Fetch and display weather icon
-                svg_image = tksvg.SvgImage(file=bg_image, scale=2)        
-                icon_label1.configure(image=svg_image)
-                icon_label2.configure(image=svg_image)
-                icon_label3.configure(image=svg_image)
+                weather_icon1 = get_icon_per_weather_condition(desc_data1)
+                weather_icon2 = get_icon_per_weather_condition(desc_data2)
+                weather_icon3 = get_icon_per_weather_condition(desc_data3)
+                
+                ctk_image1 = ctk.CTkImage(light_image=Image.open(weather_icon1),
+                                         dark_image=Image.open(weather_icon1),
+                                         size=(100,100))        
+                ctk_image2 = ctk.CTkImage(light_image=Image.open(weather_icon2),
+                                         dark_image=Image.open(weather_icon2),
+                                         size=(100,100))        
+                ctk_image3 = ctk.CTkImage(light_image=Image.open(weather_icon3),
+                                         dark_image=Image.open(weather_icon3),
+                                         size=(100,100))        
+                icon_label1.configure(image=ctk_image1)
+                icon_label2.configure(image=ctk_image2)
+                icon_label3.configure(image=ctk_image3)
                 
             else:
                 city_label.configure(text="City not found")
@@ -161,7 +179,9 @@ app.geometry("500x780")
 app.resizable(False, False)
 
 # Widgets
-bg_label = ctk.CTkLabel(app, text="", image=tksvg.SvgImage(file=bg_image, scale=20), bg_color="#000001")
+bg_label = ctk.CTkLabel(app, text="", image=ctk.CTkImage(light_image=Image.open('images/clear-day.png'),
+	dark_image=Image.open('images/clear-day.png'),
+	size=(1024,1024)), bg_color="#000001")
 bg_label.place(x=0, y=0)
 pywinstyles.set_opacity(bg_label, value=0.05)
 
