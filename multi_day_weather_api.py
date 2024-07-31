@@ -4,8 +4,8 @@ from dotenv import load_dotenv
 load_dotenv()
 api_key = os.getenv("API_KEY")
 
-def get_weather_response(lat, lon, units):
-    API_URL = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={api_key}&units={units}"
+def get_multi_day_weather_response(lat, lon, counts, units):
+    API_URL = f"https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={api_key}&units={units}"
     try:
         response = requests.get(API_URL)
         # raise an HTTP error if the response code is not 200
