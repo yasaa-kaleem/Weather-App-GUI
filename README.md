@@ -5,11 +5,11 @@ A simple and minimalist Weather Application that shows current weather or has op
 This app allows the user to view weather of any zipcode within the US. App fetches data from an open source external API, OpenWeather. It has the ability to make multiple calls to the api to get weather data. First call is made to get Longitude and Latitude of the zipcode. Other calls are made to either get data for current weather or multi-day in Fahrenheit or Celsius unit.
 
 ## Features
-Minimalist view
-Ability to show Current or Multi-Day weather
-Shows Weather Condition Icons
-Shows Weather description
-Ability to show weather in Celsius
+- Minimalist view
+- Ability to show Current or Multi-Day weather
+- Shows Weather Condition Icons
+- Shows Weather description
+- Ability to show weather in Celsius
 
 ## Downloading 
 1. Here's the link to download/ clone this repository:
