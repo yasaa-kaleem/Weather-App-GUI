@@ -20,13 +20,13 @@ Ability to show weather in Celsius
 
 ## Key Notes
 1. This app works with an API Key. Please visit https://openweathermap.org/api to get your personal API Key.
-    a. Once the key is accquired, create a ".env" file in the root directory.
-    b. Within the .env file, add API_KEY=Your Key and save the file
+    - Once the key is accquired, create a ".env" file in the root directory.
+    - Within the .env file, add API_KEY=Your Key and save the file
 
 2. This app requires additional packages to be installed before app can we used.
-    a. In the terminal make sure you are on the root directory.
-    b. Create a virtual environment by doing:
-        i. python -m venv ./virt_env
-        ii. ./virt_env/Scripts/activate
-    c. Once virtual environment has been created, install all required packages by:
-        i. pip install -r requirements.txt
+    - In the terminal make sure you are on the root directory.
+    - Create a virtual environment by doing:
+        1. python -m venv ./virt_env
+        2. ./virt_env/Scripts/activate
+    - Once virtual environment has been created, install all required packages by:
+        1. pip install -r requirements.txt
