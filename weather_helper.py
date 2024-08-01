@@ -5,7 +5,10 @@ from multi_day_weather_api import get_multi_day_weather_response
 
 # Converts string datetime to datetime object
 def convert_str_to_date(str_date):
-    date_time_obj = datetime.strptime(str_date, '%Y-%m-%d %H:%M:%S')
+    try:
+        date_time_obj = datetime.strptime(str_date, '%Y-%m-%d %H:%M:%S')
+    except ValueError:
+        raise ValueError("Date from payload is not in correct format.")
     return date_time_obj
 
 # Trims time out of date
@@ -20,7 +23,7 @@ def get_lat_lon_from_zip(zip):
     return location_dict
 
 # Gets one day weather response using latitude, longitude, and temperature unit
-def get_response_using_lat_lon(location_dict, in_fahrenheit):
+def get_one_day_response(location_dict, in_fahrenheit):
     lat = location_dict['lat']
     lon = location_dict['lon']
     if in_fahrenheit:
