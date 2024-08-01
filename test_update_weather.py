@@ -1,1 +1,1 @@
-## Placeholder for update_weather tests
+# update_weather testing placeholder
