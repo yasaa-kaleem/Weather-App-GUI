@@ -1,3 +1,4 @@
+# Gets icon location of corresponding weather condtion
 def get_icon_per_weather_condition(weather_condition):
     str_condition = str(weather_condition).lower()
     result = ''
