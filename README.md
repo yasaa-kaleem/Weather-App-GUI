@@ -37,4 +37,4 @@ This app allows the user to view weather of any zipcode within the US. App fetch
 - ![One day weather in Celsius](/screenshots/One%20Day%20weather%20C%20screen.png "One day weather in Celsius")
 - ![Multi-day weather in Fahrenheit](/screenshots/Multi-day%20weather%20screen.png "Multi-day weather in Fahrenheit")
 - ![Multi-day weather in Celsius](/screenshots/Multi-day%20weather%20C%20screen.png "Multi-day weather in Celsius")
-- ![Error Screen](/screenshots/Error%20screen.png"Error Screen")
+- ![Error Screen](/screenshots/Error%20screen.png "Error Screen")
