@@ -30,3 +30,11 @@ Ability to show weather in Celsius
         ii. ./virt_env/Scripts/activate
     c. Once virtual environment has been created, install all required packages by:
         i. pip install -r requirements.txt
+
+## Screenshots
+- ![Main Screen](/screenshots/Main%20screen.png "Main Screen")
+- ![One day weather in Fahrenheit](/screenshots/One%20Day%20weather%20screen.png "One day weather in Fahrenheit")
+- ![One day weather in Celsius](/screenshots/One%20Day%20weather%20C%20screen.png "One day weather in Celsius")
+- ![Multi-day weather in Fahrenheit](/screenshots/Multi-day%20weather%20screen.png "Multi-day weather in Fahrenheit")
+- ![Multi-day weather in Celsius](/screenshots/Multi-day%20weather%20C%20screen.png "Multi-day weather in Celsius")
+- ![Error Screen](/screenshots/Error%20screen.png"Error Screen")
