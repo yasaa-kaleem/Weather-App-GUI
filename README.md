@@ -18,6 +18,14 @@ This app allows the user to view weather of any zipcode within the US. App fetch
     HTTPS clone:
     git clone https://gitlab.galvanize.com/yasaa.kaleem.ee1h/weather-app-gui.git
 
+## How it works
+1. Open terminal.
+2. Go to the root directory of the project.
+3. Do python main.py.
+4. Once app opens, type in the zipcode of the city.
+5. Options - You have the option to select Multi-Day to view 3-day weather and to view Temperature in Celsius.
+6. When either one of the options are select, Get Weather button needs to be click again to update values.
+
 ## Key Notes
 1. This app works with an API Key. Please visit https://openweathermap.org/api to get your personal API Key.
     - Once the key is accquired, create a ".env" file in the root directory.
